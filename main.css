@@ -1,0 +1,17 @@
+html{
+	font-size:20px;
+}
+h1{
+	font-size: 30px;
+}
+h1,pre,p,div{
+	padding: 20px;
+	border:1px dashed #eee;
+	margin:5px;
+}
+pre{
+	background: #eee;
+}
+a{
+	color:orange;
+}

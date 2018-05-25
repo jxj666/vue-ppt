@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>条件与循环</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <h1>
+        条件与循环 v-if v-for
+    </h1>
+    <div id="app-3">
+        <p v-if="seen">现在你看到我了</p>
+        <div>
+            <ol>
+                <li v-for="todo in todos">
+                    {{ todo.text }}
+                </li>
+            </ol>
+        </div>
+    </div>
+    <pre>
+app3.seen=false;
+app3.todos.reverse();
+    </pre>
+    <div><a href="05.html">绑定事件</a></div>
+</body>
+<script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
+<script>
+var app3 = new Vue({
+    el: '#app-3',
+    data: {
+        seen: true,
+        todos: [
+            { text: '学习 html' },
+            { text: '学习 css' },
+            { text: '学习 js' }
+        ],
+    }
+})
+</script>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>绑定事件</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <h1>
+        绑定事件 v-on
+    </h1>
+    <div id="app-4">
+        <p>{{ message }}</p>
+        <div>
+            <button v-on:click="reverseMessage">逆转消息</button>
+        </div>
+        <div>
+            <button @click="reverseMessage">逆转消息</button>
+        </div>
+        <div>
+            <button @click.once="reverseMessage">逆转消息</button>
+        </div>
+    </div>
+    <div>
+        <a href="06.html">表单处理</a>
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
+<script>
+var app4 = new Vue({
+    el: '#app-4',
+    data: {
+        message: '123456789'
+    },
+    methods: {
+        reverseMessage: function() {
+            this.message = this.message.split('').reverse().join('')
+        }
+    }
+})
+</script>
+
+</html>

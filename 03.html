@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>v-bind</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div id="app-2">
+        <h1 v-bind:title="message">
+            v-bind:动态地绑定一个或多个特性
+        </h1>
+        <div>
+            <a :href="url">跳转 => {{url}}</a>
+        </div>
+        <div>
+            <img :src="imgUrl" alt="0">
+        </div>
+        <pre>
+app2.url='http://baidu.com';
+app2.imgUrl='01.png';
+        </pre>
+    </div>
+    <div>
+        <a href="04.html">v-if v-for</a>
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
+<script>
+var app2 = new Vue({
+    el: '#app-2',
+    data: {
+        message: '动态地绑定一个或多个特性',
+        url: 'http://jxjweb.top',
+        imgUrl: '02.png',
+    }
+})
+</script>
+
+</html>

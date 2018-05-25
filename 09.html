@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>组件通信</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div id="components-demo">
+        <h1>
+             组件通信
+         </h1>
+        <div>
+            <button-counter :num='count1'></button-counter>
+            <button-counter :num='count2'></button-counter>
+            <button-counter :num='count3'></button-counter>
+        </div>
+        <div>
+            <button-counter1 @get-new-num='getNewNum' :num='count1' type='count1'></button-counter1>
+            <button-counter1 @get-new-num='getNewNum' :num='count2' type='count2'></button-counter1>
+            <button-counter1 @get-new-num='getNewNum' :num='count3' type='count3'></button-counter1>
+            <div>总计 : {{total}}</div>
+        </div>
+    </div>
+    <div>
+        <a href="http://element-cn.eleme.io/#/zh-CN/component/select">component select</a>
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
+<script>
+Vue.component('button-counter', {
+    props: ['num'],
+    template: '<button v-on:click="num++">{{ num }} 次</button>'
+})
+Vue.component('button-counter1', {
+    props: ['num', 'type'],
+    template: '<button @click="addNum">{{ num }} 次</button>',
+    methods: {
+        addNum() {
+            this.num += 1;
+            console.log(`'发'+${this.num}+${this.type}`);
+            this.$emit('get-new-num', this.num, this.type);
+        }
+    }
+
+})
+let app = new Vue({
+    el: '#components-demo',
+    data() {
+        return {
+            count1: 1,
+            count2: 2,
+            count3: 3,
+        }
+    },
+    methods: {
+        getNewNum(num, type) {
+            console.log(`"收"+${num}+${type}`)
+            this[type] = num
+        },
+    },
+    computed: {
+        total() {
+            return this.count1 + this.count2 + this.count3
+        }
+    }
+
+})
+</script>
+
+</html>

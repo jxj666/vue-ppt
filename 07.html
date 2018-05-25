@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>过滤器 计算属性</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <h1>
+        过滤器 计算属性
+    </h1>
+    <div id="app6">
+        <div>
+            <span>{{money | createFilter}}</span>
+        </div>
+        <!-- 动态值 -->
+        <div>
+            <input type="text" v-model="userInput" name="">
+            <div>{{ userInput| concat(msg)}}</div>
+        </div>
+        <div>
+            <p>工资:{{money1}}</p>
+            <p>补助:{{money2}}</p>
+            <p>收入:{{total}}</p>
+        </div>
+    </div>
+    <pre>
+app6.msg='人民币'
+app6.money1=20000
+    </pre>
+    <div>
+        <a href="08.html">生命周期 方法</a>
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
+<script>
+var app6 = new Vue({
+    el: "#app6",
+    data: {
+        money: 23234,
+        userInput: 34122314,
+        msg: '美元',
+        money1: 10000,
+        money2: 2000,
+    },
+    filters: {
+        createFilter(value) {
+            return "￥" + value;
+        },
+        concat(value, inputVal) {
+            return `${inputVal} : ${value}`;
+        },
+
+    },
+    computed: {
+        total() {
+            return this.money1 + this.money2;
+        },
+    },
+})
+</script>
+
+</html>

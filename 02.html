@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>数据绑定</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <h1>
+        数据绑定
+    </h1>
+    <p id="userInfo">
+        <br> 姓名:
+        <span>{{info.name}}</span>
+        <br> 性别:
+        <span>{{info.sex}}</span>
+        <br> 职业:
+        <span v-text="info.job"></span>
+    </p>
+    <pre>
+app.info= {
+    name: '小红',
+    sex: '女',
+    job: 'php',
+}
+app.info= {
+    name: '小花',
+    sex: '女',
+    job: 'java',
+}
+
+    </pre>
+    <div>
+        <a href="http://jxjweb.top/2017/02/vue01/" target="_brank">vue01</a>
+        <a href="http://jxjweb.top/2017/02/vue02/" target="_brank">vue02</a>
+    </div>
+    <div>
+        <a href="03.html"> v-bind </a>
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
+<script>
+var app = new Vue({
+    el: '#userInfo',
+    data: {
+        info: {
+            name: '小明',
+            sex: '男',
+            job: 'web',
+        },
+    }
+})
+</script>
+
+</html>

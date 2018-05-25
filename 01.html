@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>常规方法</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+	<h1>
+		常规方法
+	</h1>
+    <p id="userInfo">
+        <br> 姓名:
+        <span id="name"></span>
+        <br> 性别:
+        <span id="sex"></span>
+        <br> 职业:
+        <span id="job"></span>
+    </p>
+    <pre>
+users.info = {
+    name: '小红',
+    sex: '女',
+    job: 'php',
+}
+refersh()
+
+user.info={
+    name: '小花',
+    sex: '女',
+    job: 'java',
+}
+refersh()
+
+    </pre>
+    <div>
+    	<a href="02.html">数据绑定</a>
+    </div>
+</body>
+<script>
+var users = {
+    info: {
+        name: '小明',
+        sex: '男',
+        job: 'web',
+    },
+}
+
+function refersh() {
+    document.getElementById('name').innerHTML = users.info.name;
+    document.getElementById('sex').innerHTML = users.info.sex;
+    document.getElementById('job').innerHTML = users.info.job;
+    // jquery
+    // $('#name').html(users.info.name);
+}
+refersh()
+</script>
+
+</html>
