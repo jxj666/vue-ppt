@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>数据绑定</title>
     <link rel="stylesheet" href="main.css">
+    <script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
 </head>
 
 <body>
@@ -15,7 +16,7 @@
         <br> 姓名:
         <span>{{info.name}}</span>
         <br> 性别:
-        <span>{{info.sex}}</span>
+        <span>{{info.sex}}生</span>
         <br> 职业:
         <span v-text="info.job"></span>
     </p>
@@ -40,7 +41,6 @@ app.info= {
         <a href="03.html"> v-bind </a>
     </div>
 </body>
-<script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
 <script>
 var app = new Vue({
     el: '#userInfo',

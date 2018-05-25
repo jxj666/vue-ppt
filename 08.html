@@ -25,7 +25,7 @@ app.info={
             sex: '男',
             job: 'web',
         }
-app.fun2()       
+app.fun1()       
     </pre>
     <div>
         <a href="09.html">组件通信</a>
@@ -44,29 +44,26 @@ var app = new Vue({
     },
     created() {
         alert('created');
-    },
-    mounted() {
-        alert('mounted');
-        this.fun1();
+        this.fun2();
     },
     updated() {
-        alert('update');
+        alert('updated');
     },
     methods: {
         fun1() {
             this.info = {
-                name: '小花',
+                name: '小花1',
                 sex: '女',
                 job: 'java',
             };
         },
         fun2() {
             this.info = {
-                name: '小花',
+                name: '小花2',
                 sex: '女',
                 job: 'java',
             }
-        }
+        },
     }
 })
 </script>

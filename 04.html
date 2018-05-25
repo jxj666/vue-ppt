@@ -12,20 +12,24 @@
         条件与循环 v-if v-for
     </h1>
     <div id="app-3">
-        <p v-if="seen">现在你看到我了</p>
+        <div>
+            <p v-if="seen">现在你看到我了</p>
+        </div>
         <div>
             <ol>
-                <li v-for="todo in todos">
-                    {{ todo.text }}
+                <li v-for="i in todos">
+                    {{ i.text }}
                 </li>
             </ol>
         </div>
     </div>
     <pre>
 app3.seen=false;
+app3.seen=true;
 app3.todos.reverse();
+app3.todos.push({text:'学习 vue'});
     </pre>
-    <div><a href="05.html">绑定事件</a></div>
+    <div><a href="05.html">绑定事件 v-on</a></div>
 </body>
 <script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
 <script>
